@@ -14,15 +14,12 @@ Riot assertions for MongoMapper
         asserts_topic.has_key :caption, String, :default => ""
 
         # association assertions
-        asserts_topic.has_association :belongs_to_related, :account
-        asserts_topic.has_association :has_many_related, :comments
-        asserts_topic.has_association :embedded_in, :person, :inverse_of => :address
+        asserts_topic.has_association :many, :accounts
+        asserts_topic.has_association :one, :comments
+        asserts_topic.has_association :many, :persons, :in => :persons_id
         
         # validation assertions
         asserts_topic.has_validation :validates_presence_of, :caption
-        
-        # key assertions
-        asserts_topic.has_key :title, :caption
       end
     end
     
