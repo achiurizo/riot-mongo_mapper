@@ -7,14 +7,14 @@ Gem::Specification.new do |s|
   s.description = "A collection of assertion macros for testing MongoMapper with Riot"
   s.email = "mr.arthur.chiu@gmail.com"
   s.extra_rdoc_files = ["README.md"]
-  s.files = %w{.document .gitignore LICENSE README.md Rakefile riot-mongo_mapper.gemspec} + Dir.glob("{lib,test}/**/*")
+  s.files = %w{LICENSE README.md Rakefile riot-mongo_mapper.gemspec} + Dir.glob("{lib,test}/**/*")
   s.homepage = %q{http://github.com/achiu/riot-mongo_mapper}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.summary = %q{Riot assertions for MongoMapper}
   s.add_development_dependency(%q<riot>, [">= 0"])
   s.add_development_dependency(%q<yard>, [">= 0"])
-  s.add_runtime_dependency(%q<mongo_mapper>, [">= 1.2.7"])
-  s.add_runtime_dependency(%q<riot>, [">= 0.10.12"])
+  s.add_runtime_dependency(%q<mongo_mapper>, [">= 0.8.2"])
+  s.add_runtime_dependency(%q<riot>, [">= 0.11.2"])
 end
 
