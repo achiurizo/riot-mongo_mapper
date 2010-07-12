@@ -16,7 +16,7 @@ module RiotMongoMapper
       else
         options_valid = options.all? { |key,value| validation.send(key) == value }
         options_valid ? pass("#{model} has '#{validation_type}' validation '#{validation_name}' with options #{options.inspect}") :
-                        fail("expected #{model} to have options #{options.inspect} on validation #{validation_type}")
+                        fail("expected #{model} to have validations on #{validation_name} with options #{options.inspect} of type #{validation_type}")
       end
     end
   end
