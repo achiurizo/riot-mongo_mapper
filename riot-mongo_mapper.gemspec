@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "riot-mongo_mapper"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
   s.required_rubygems_version = ">= 1.3.6"
   s.authors = ["Arthur Chiu"]
   s.date = Time.now.strftime("%Y-%m-%d")
