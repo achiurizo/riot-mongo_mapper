@@ -7,7 +7,7 @@ Riot assertions for MongoMapper
     context "Photo Model" do
 
       context 'definition' do
-        setup { Photo.new }
+        setup { Photo }
         
         # field associations
         asserts_topic.has_key :title, String
