@@ -20,6 +20,9 @@ Riot assertions for MongoMapper
         
         # validation assertions
         asserts_topic.has_validation :validates_presence_of, :caption
+        
+        # plugin assertions
+        asserts_topic.has_plugin Plugins::SomePlugin
       end
     end
     
