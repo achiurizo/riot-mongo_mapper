@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__),'teststrap')
+require File.expand_path(File.dirname(__FILE__) + '/teststrap.rb')
 
 context "has_association macro" do
   setup{ @assertion = RiotMongoMapper::HasAssociationAssertion.new }

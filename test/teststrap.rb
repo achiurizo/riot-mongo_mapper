@@ -1,8 +1,7 @@
 require 'rubygems'
 require 'riot'
 require 'mongo_mapper'
-require File.join(File.dirname(__FILE__),'..','lib','riot-mongo_mapper')
-
+require File.expand_path(File.dirname(__FILE__) + '/../lib/riot-mongo_mapper.rb')
 
 class Riot::Situation
   def mock_model(&block)

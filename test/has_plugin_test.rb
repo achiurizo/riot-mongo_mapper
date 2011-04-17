@@ -1,5 +1,5 @@
-require File.join(File.dirname(__FILE__),'teststrap')
-require File.join(File.dirname(__FILE__), 'fixtures', 'test')
+require File.expand_path(File.dirname(__FILE__) + '/teststrap.rb')
+require File.expand_path(File.dirname(__FILE__) + '/fixtures/test.rb')
 
 context "has_plugin macro" do
   setup{ @assertion = RiotMongoMapper::HasPluginAssertion.new }

@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__),'teststrap')
+require File.expand_path(File.dirname(__FILE__) + '/teststrap.rb')
 
 context "has_key macro" do
   setup { @assertion = RiotMongoMapper::HasKeyAssertion.new }
