@@ -1,7 +1,9 @@
-require File.expand_path(File.dirname(__FILE__) + '/teststrap.rb')
+require File.expand_path('../teststrap', __FILE__)
 
 context "has_validation macro" do
-  setup { @assertion = RiotMongoMapper::HasValidationAssertion.new }
+
+  helper(:macro) { RiotMongoMapper::HasValidationAssertion.new }
+
   setup do
     mock_model do
       key :name, String
@@ -15,30 +17,30 @@ context "has_validation macro" do
   end
 
   asserts "passes when the validation is specified" do
-    @assertion.evaluate(topic, :validates_presence_of, :name).first
+    macro.evaluate(topic, :validates_presence_of, :name).first
   end.equals(:pass)
 
   asserts "passes when the validation is specified" do
-    @assertion.evaluate(topic, :validates_presence_of, :surname).first
+    macro.evaluate(topic, :validates_presence_of, :surname).first
   end.equals(:pass)
 
   asserts "returns useful message" do
-    @assertion.evaluate(topic, :validates_presence_of, :name).last
+    macro.evaluate(topic, :validates_presence_of, :name).last
   end.matches(/has 'validates_presence_of' validation 'name'/)
 
   asserts "passes when the validation options is specified" do
-    @assertion.evaluate(topic, :validates_length_of, :surname, :within => 4..40).first
+    macro.evaluate(topic, :validates_length_of, :surname, :within => 4..40).first
   end.equals(:pass)
 
   asserts "passes when the validation options is specified and doesn't match" do
-    @assertion.evaluate(topic, :validates_length_of, :surname, :within => 3..30).first
+    macro.evaluate(topic, :validates_length_of, :surname, :within => 3..30).first
   end.equals(:fail)
 
   asserts "fails when invalid field options are specified" do
-    @assertion.evaluate(topic, :validates_length_of, :name, :type => Date).first
+    macro.evaluate(topic, :validates_length_of, :name, :type => Date).first
   end.equals(:fail)
 
   asserts "passes when another validation is specified" do
-    @assertion.evaluate(topic, :validates_uniqueness_of, :rad).first
+    macro.evaluate(topic, :validates_uniqueness_of, :rad).first
   end.equals(:pass)
 end
