@@ -1,7 +1,8 @@
 module Plugins
-  extend ActiveSupport::Concern
   module Test
+    extend ActiveSupport::Concern
   end
   module Faux
+    extend ActiveSupport::Concern
   end
 end
