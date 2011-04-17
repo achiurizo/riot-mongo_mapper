@@ -4,7 +4,7 @@ module RiotMongoMapper
 
     def evaluate(model, *key_macro_info)
       key_name, key_type, options = key_macro_info
-      key = model.keys[key_name.to_sym]
+      key = model.keys[key_name.to_s]
       if key.nil?
         fail("expected #{model} to have field #{key_name}")
       else
